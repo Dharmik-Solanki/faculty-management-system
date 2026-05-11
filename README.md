@@ -26,23 +26,25 @@ This system acts as a dedicated portal for an institution to manage their facult
 If you are pulling this project down to test it, follow these steps to get it running on your machine:
 
 **1. Install Dependencies**
-
+```bash
 composer install
 npm install
 
+```
 
 **2. Setup the Environment**
 Copy the example environment file and generate your application key:
 
+```bash
 cp .env.example .env
 php artisan key:generate
 
+```
 
 **3. Configure the Database**
 Open the `.env` file and update your database credentials to match your local setup:
 
-env
-
+```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -50,28 +52,30 @@ DB_DATABASE=faculty_system
 DB_USERNAME=root
 DB_PASSWORD=
 
-
+```
 
 **4. Migrate and Seed**
 This will create all the necessary tables and generate the default Admin account:
 
-
+```bash
 php artisan migrate:fresh --seed
 
-
+```
 
 **5. Link the Storage**
 This step is required so the profile photos render correctly on the frontend:
 
+```bash
 php artisan storage:link
 
-
+```
 
 **6. Boot up the server**
 
-
+```bash
 php artisan serve
 
+```
 
 ---
 
